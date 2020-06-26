@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
+    <title>List Maker</title>
+</head>
+<body>
+<div class="shoppingList" th:fragment="shoppingListFragment">
+    <h3>Shopping List</h3>
+
+    <ul th:each="product:${cart}">
+        <li>
+            <img class="shoppingListPicture" th:src="@{${product.img}}">
+            <span th:text="${product.name}">Lorem ipsum </span>
+            <div class="shoppingListDiv">
+                <form action="#" th:action="@{'/cart/' + ${product.id}}" method="get">
+                    <input type="submit" value="-">
+                </form>
+                <p th:text="${product.getQuantity() * product.amount}">0</p>
+                <form action="#" th:action="@{'/cart/' + ${product.id}}" method="post">
+                    <input type="submit" value="+">
+                </form>
+            </div>
+
+        </li>
+
+    </ul>
+</div>
+</body>
+</html>

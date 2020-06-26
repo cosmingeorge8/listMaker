@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
+    <title>List Maker</title>
+</head>
+<body>
+<nav>
+    <div class="logo">
+        <img th:src="@{../images/cart.png}" alt="logo" width="30px">
+        <h1> List maker </h1>
+    </div>
+
+    <a href="/">Home</a>
+    <a href="/recipes">Recipes</a>
+    <a href="/cart">My  List</a>
+    <a href="/about">About</a>
+    <a href="/login">Login</a>
+</nav>
+
+
+
+<div class="categoryContainer">
+    <!--/*@thymesVar id="recipe" type="com.cosmingeorge.shoppingapp.data.Recipe"*/-->
+    <form  method="post" th:action="@{/recipes/add}" th:object="${recipe}">
+        <h2>Add a new recipe</h2>
+        <label for="name">Recipe title</label>
+        <input type="text" class="form-control" id="name" th:field="*{name}"/>
+        <label for="description">Description</label>
+        <input type="text"  class="form-control" id = "description" th:field="*{description}" />
+        <label for="time">Time</label>
+        <input type="number" id="time"  class="form-control" th:field="*{time}"/> <span th:text="minutes" ></span>
+
+        <ul>
+
+            <li><label for="ingredient0"> Ingredient 1 </label>
+         <input type="text" class="form-control" id="ingredient0" th:field="*{productList[0].name}"/>
+         <label for="quantity0"> quantity</label>
+         <input type="number" class="form-control" id="quantity0" th:field="*{productList[0].quantity}"/>
+            </li>
+
+            <li><label for="ingredient1"> Ingredient 2 </label>
+                <input type="text" class="form-control" id="ingredient1" th:field="*{productList[1].name}"/>
+                <label for="quantity1"> quantity</label>
+                <input type="number" class="form-control" id="quantity1" th:field="*{productList[1].quantity}"/>
+            </li>
+
+            <li><label for="ingredient2"> Ingredient 3 </label>
+                <input type="text" class="form-control" id="ingredient2" th:field="*{productList[2].name}"/>
+                <label for="quantity2"> quantity</label>
+                <input type="number" class="form-control" id="quantity2" th:field="*{productList[2].quantity}"/>
+            </li>
+
+            <li><label for="ingredient3"> Ingredient 4 </label>
+                <input type="text" class="form-control" id="ingredient3" th:field="*{productList[3].name}"/>
+                <label for="quantity3"> quantity</label>
+                <input type="number"  class="form-control" id="quantity3" th:field="*{productList[3].quantity}"/>
+            </li>
+
+
+            <li><label for="ingredient4"> Ingredient 5 </label>
+                <input type="text" class="form-control" id="ingredient4" th:field="*{productList[4].name}"/>
+                <label for="quantity4"> quantity</label>
+                <input type="number"  class="form-control" id="quantity4" th:field="*{productList[4].quantity}"/>
+            </li>
+        </ul>
+
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+
+
+</body>
+</html>

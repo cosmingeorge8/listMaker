@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+            lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Making</title>
+</head>
+<body>
+    <div class="navBar" th:fragment="navBar">
+        <nav th:fragment="navBar">
+            <div class="logo">
+                <img th:src="@{/images/cart.png}" alt="logo" width="30px">
+                <h1> List maker </h1>
+            </div>
+
+            <a href="/">Home</a>
+            <a href="/recipes">Recipes</a>
+            <a th:if="${loggedIn} == 'true'" href="/cart">My List</a>
+            <a href="/about">About</a>
+            <a th:if="${loggedIn} == 'false'" href="/user/login">Login</a>
+            <a th:if="${loggedIn} == 'false'" href="/user/register">Register</a>
+            <a th:if="${loggedIn} == 'true'" href="/logout">Logout</a>
+        </nav>
+    </div>
+</body>
+</html>

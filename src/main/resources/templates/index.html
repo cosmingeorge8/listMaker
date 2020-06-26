@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
+    <title>List Making</title>
+</head>
+<body>
+
+    <div th:replace="navFragment"></div>
+
+    <div th:replace="SLFragment"></div>
+
+    <div class="categoryContainer">
+        <h2> Pick a category</h2>
+            <section th:each="category:${categories}">
+                <a th:href="@{'/categories/' + ${category.id}}"><img th:src="@{${category.imgPath}}"></a>
+
+            </section>
+    </div>
+
+</body>
+</html>

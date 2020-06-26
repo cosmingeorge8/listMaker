@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="../static/style.css" rel="stylesheet" th:href="@{/style.css}">
+    <title>List Making</title>
+</head>
+<body>
+
+<div th:replace="navFragment"></div>
+
+<div th:replace="SLFragment"></div>
+
+<div class="categoryContainer">
+    <h2>Pick a recipe</h2>
+    <div class="add">
+        <form action="#" method="get" th:action="@{/recipes/add}">
+            <input type="submit" value="Add a new recipe">
+        </form>
+    </div>
+
+    <section th:each="recipe:${recipes}">
+
+        <a th:href="@{'/recipes/recipe?id=' + ${recipe.id}}">
+            <h3 th:text="${recipe.name}">Test</h3><img id="recipeImage" th:src="@{${recipe.img}}"> </a>
+
+    </section>
+
+</div>
+
+</body>
+</html>

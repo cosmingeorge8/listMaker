@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
+    <title>List Making</title>
+</head>
+<body>
+
+     <nav>
+         <div class="logo">
+             <img th:src="@{images/cart.png}" alt="logo" width="30px">
+             <h1> List maker </h1>
+
+         </div>
+         <a href="/">Home</a>
+         <a href="/recipes">Recipes</a>
+         <a href="/cart">My List</a>
+         <a href="/about">About</a>
+         <a href="/login">Login</a>
+      </nav>
+
+    <div class="shoppingList">
+        <h3>Shopping List</h3>
+
+        <ul th:each="product:${cart}">
+            <li>
+                <img class="shoppingListPicture" th:src="@{${product.img}}">
+                <span th:text="${product.name}">Lorem ipsum </span>
+                <form action="#" th:action="@{'../cart/' + ${product.id}}" method="get">
+                    <input type="submit" value="-">
+                </form>
+                <p th:text="${product.getQuantity() * product.amount}">0</p>
+                <form action="#" th:action="@{'../cart/' + ${product.id}}" method="post">
+                    <input type="submit" value="+">
+                </form>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="categoryContainer">
+        <h2> Pick a category</h2>
+            <section th:each="category:${categories}">
+                <a th:href="@{'/categories/' + ${category.id}}"><img th:src="@{${category.imgPath}}"></a>
+
+            </section>
+    </div>
+
+</body>
+</html>

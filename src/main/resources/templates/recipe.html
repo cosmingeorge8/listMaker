@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
+    <title>List Maker</title>
+</head>
+<body>
+<div th:replace="navFragment"></div>
+
+<div th:replace="SLFragment"></div>
+
+<div class="categoryContainer">
+
+    <h2 th:text="${recipe.name}">Try yourself</h2>
+
+    <div class="add">
+        <form action="#" th:action="@{'../cart/recipe/' + ${recipe.id}}" method="post">
+            <input type="submit" value="Add ingredients to shopping list">
+        </form>
+    </div>
+
+    <section class="holder">
+        <img th:src="@{${recipe.img}}">
+    </section>
+
+    <section>
+        <div class="description" th:text="${recipe.description}"></div>
+    </section>
+    <section class="recipeProduct" th:each="product:${recipe.productList}">
+        <div th:if="${product.quantity}!=0" th:text="${product.quantity}+' x '+${product.name}"></div>
+    </section>
+</div>
+
+
+</body>
+</html>

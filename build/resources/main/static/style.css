@@ -1,0 +1,248 @@
+
+.logo{
+    align-items: baseline;
+    display: flex;
+}
+.logo img{
+    margin-right: 2px;
+}
+nav h1{
+    font-family: "Al Nile";
+    color: #0da83e;
+}
+nav{
+    float: right;
+    align-items: baseline;
+    margin-right: 1%;
+    position: absolute;
+    right: 10px;
+    top: 7%;
+}
+
+nav a{
+    font-family: "Al Nile";
+    color: black;
+    text-decoration: none;
+    margin: 10px;
+}
+
+nav a:hover{
+    color: #0da83e;
+    text-decoration: underline;
+}
+
+nav a{
+    transition: 600ms;
+}
+
+.categoryContainer{
+    width: 50%;
+    margin: 200px auto auto;
+    border: green 2px solid;
+    border-radius: 10px;
+}
+
+.categoryContainer h2{
+    font-family: "Al Nile";
+    text-align: center;
+    font-size: 50px;
+    color: green;
+}
+
+.categoryContainer img{
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+.productContainer{
+    width: 50%;
+    margin: 200px auto auto;
+    border: green 2px solid;
+    border-radius: 10px;
+    display: block;
+
+}
+
+.productContainer h2{
+    font-family: "Al Nile";
+    text-align: center;
+    font-size: 50px;
+    color: green;
+}
+
+.holder{
+    align-items: baseline;
+    display: flex;
+}
+
+
+.shoppingList{
+    width: auto;
+    position: fixed;
+    border: 3px solid green;
+    /*border-left: white;*/
+    border-radius: 10px;
+}
+
+.shoppingList h3{
+    font-family: "Al Nile";
+    text-align: center;
+}
+
+.shoppingList ul{
+    border-top: 2px green solid;
+    list-style: none;
+}
+
+.shoppingList li{
+    align-items: baseline;
+    display: flex;
+    padding-top: 5px;
+    margin-right: 10px;
+}
+
+.shoppingList li button{
+    margin: 5px;
+}
+
+.description
+{
+    margin: 3% 20% 5%;
+}
+.recipeProduct
+{
+    margin-left: 20%;
+}
+.categoryContainer p{
+    margin: 1px;
+}
+
+.add input{
+    float: right;
+    border: 2px green solid;
+    border-radius: 10px;
+    margin-right: 5%;
+    transition: 100ms;
+    font-size: 20px;
+    background: white;
+}
+.shoppingListSection
+{
+    display: flex;
+}
+input {
+    border-radius: 14px;
+    margin: 0px 5px 0px 5px;
+}
+.shoppingListPicture
+{
+    height: 30px;
+    margin-right:12px;
+}
+
+.categoryContainer a{
+    text-decoration: none;
+
+}
+.categoryContainer h3{
+    color: green;
+    margin-left: 30%;
+    font-size: 20px;
+    font-family: "Al Nile";
+}
+
+#recipeImage{
+    margin-bottom: 10%;
+}
+@media only screen and (max-width: 1114px)
+{
+    /* For mobile phones: */
+    .shoppingList
+    {
+        margin-top: 17%;
+        width: 30%;
+        margin-left: 35%;
+        position: unset;
+    }
+    .categoryContainer
+    {
+        width: 50%;
+        margin: 2% auto auto;
+    }
+}
+@media only screen and (max-width: 800px)
+{
+    /* For mobile phones: */
+    .listSection
+    {
+        margin: 200px auto auto;
+    }
+    nav
+    {
+        top: 0%;
+        display: grid;
+    }
+    .shoppingList ul
+    {
+        padding: unset;
+    }
+    .shoppingList li
+    {
+        display: grid;
+    }
+    .shoppingListDiv
+    {
+        display: inline-flex;
+    }
+}
+.loginContainer {
+    border-radius: 10px;
+    border: 2px solid green;
+    width: 11%;
+    margin-top: 10%;
+    margin-left: 45%;
+}
+.loginContainer a{
+    text-decoration: none;
+}
+
+.loginContainer form{
+    margin: 10px;
+    display: inline-grid;
+}
+
+.loginContainer input{
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid green;
+}
+
+.loginContainer li
+{
+    display: inline-grid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 -50% 0 0;
+    transform: translate(-50%, -50%);
+}
+.loginContainer button
+{
+    background-color: #0da83e;
+    height: 20px;
+    border-radius: 7px;
+    width: 5em;
+}
+.sortContainer
+{
+    float: right;
+}
+.shoppingListDiv
+{
+    display: flex;
+}
+.shoppingListDiv p
+{
+    margin: unset;
+}

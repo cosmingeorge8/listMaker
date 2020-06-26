@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
+    <title>List Maker</title>
+</head>
+<body>
+<div th:replace="navFragment"></div>
+
+<div th:replace="SLFragment"></div>
+
+    <div class="categoryContainer">
+        <h2 th:text="${category.name}">Choose your products</h2>
+        <div class="sortContainer">
+            <label>Sort by:</label>
+
+            <form th:action="@{'/categories/' + ${category.id} + '/sortedName'}" method="get">
+                <input type="submit" value="Name" />
+            </form>
+
+            <form th:action="@{'/categories/' + ${category.id} + '/sortedQuantity'}" method="get">
+                <input type="submit" value="Quantity" />
+            </form>
+
+        </div>
+        <section class="holder" th:each="product:${category.productList}">
+            <img th:src="@{${product.img}}">
+            <p th:text="${product.name}"></p>
+            <p th:text="${product.getQuantity()}">0</p>
+            <form action="#" th:action="@{'/cart/' + ${product.id}}" method="post">
+                <input type="submit" value="Add">
+            </form>
+        </section>
+        </div>
+
+</body>
+</html>
